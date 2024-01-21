@@ -3,7 +3,9 @@ from flask_migrate import Migrate
 
 import os
 #from dotenv import load_dotenv
-database_uri = os.environ.get('SQLALCHEMY_DATABASE_URI')
+uri = os.getenv("SQLALCHEMY_DATABASE_URI")  # or however you get your database URL
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
 
 from .models import db
 
@@ -20,7 +22,8 @@ if os.environ.get('HEROKU') is None:
     load_dotenv()
 
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['STATIC_FOLDER'] = 'static'
 
 db.init_app(app)
