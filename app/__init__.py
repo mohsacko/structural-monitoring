@@ -30,5 +30,29 @@ db.init_app(app)
 
 migrate = Migrate(app, db)
 
+
+"""
+API Section
+def get_sensor_data():
+    api_url = "RESENSYS_API_URL"
+    params = {
+        'api_key': 'RESENSYS_API_KEY',
+        
+    }
+    response = requests.get(api_url, params=params)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
+
+@app.route('/')
+def index():
+    weather_data = get_weather_data()
+    return render_template('index.html', data=weather_data)        
+"""
+
+
+
+
 # Import views after the app instance is created
 from . import views, models
