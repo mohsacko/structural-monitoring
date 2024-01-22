@@ -93,14 +93,6 @@ def logout():
     logout_user()
     return redirect(url_for('dashboard'))
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        email = request.form['email']
-        hashed_password = generate_password_hash(request.form['password'], method='scrypt')
-        new_user = User(email=email, password=hashed_password)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('Your account has been created!', 'success')
-        return redirect(url_for('login'))
-    return render_template('register.html')
+@app.route("/live", methods=['GET', 'POST'])
+def live():
+    return render_template('live.html')

@@ -15,11 +15,23 @@
     <!-- D3.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js" integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <!-- New Scripts from index.html -->
+    <!--suppress JSUnresolvedLibraryURL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"
+    integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"
+    integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
 </head>
 <body hx-boost="true">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('dashboard') }}">Structural Monitoring</a>
+            <img src="/static/img/wsp-logo.png" alt="WSP Monitoring" width="96" height="48" style="padding-right: 20px;">
+            <a class="navbar-brand" href="{{ url_for('dashboard') }}">   Structural Monitoring</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,12 +41,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('live') }}">Live</a>
+                        </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                            <a class="nav-link" href="{{ url_for('live') }}">Live</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -42,7 +57,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container-fluid">
         {% block content %}{% endblock %}
     </div>
 

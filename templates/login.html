@@ -4,7 +4,11 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-8 modular-container">
+            <!-- Banner Image -->
+            <img src="{{ url_for('static', filename='/img/banner-2.webp') }}" alt="Banner" class="banner-image">
+    </div>
+    <div class="col-md-3 modular-container">
         <div class="card">
             <div class="card-header">Login</div>
             <div class="card-body">
@@ -28,6 +32,15 @@
                 </form>
             </div>
         </div>
+        
+        <div class="card">
+            <div class="card-header">Contact</div>
+            <div class="card-body">
+                <div>Please use the username and password provided to you during the registration process. If you are having trouble logging in, please contact:</div>
+                <div>Mohamed Sacko</div>
+                <div>mohamed.sacko@wsp.com</div>
+                <div>704-426-3457</div>
+            </div>        
     </div>
 </div>
 {% endblock %}

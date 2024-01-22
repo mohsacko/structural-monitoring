@@ -8,6 +8,13 @@
     border-radius: 10px;
     background-color: white;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 5px;
 }
+
+.banner-image {
+    width: 100%; /* Full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+}
+
 
