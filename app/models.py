@@ -17,6 +17,34 @@ group_bridge_association = db.Table('group_bridge_association',
     db.Column('bridge_id', db.Integer, db.ForeignKey('bridge.id'))
 )
 
+# Association table for many-to-many relationship between Product and Item
+product_item_association = db.Table('product_item_association',
+    db.Column('product_id', db.Integer, db.ForeignKey('product.id')),
+    db.Column('item_id', db.Integer, db.ForeignKey('item.id'))
+)
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    designation = db.Column(db.String(255), nullable=True)
+    supplier = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.String(255), nullable=False)
+    parameters = db.Column(db.String(255), nullable=True)
+    system = db.Column(db.String(255), nullable=True)
+    photo = db.Column(db.String(255), nullable=True)
+
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    reference = db.Column(db.String(255), nullable=False)
+    condition = db.Column(db.String(50), nullable=False)
+    unit = db.Column(db.String(50), nullable=False)
+    measurement = db.Column(db.Integer)
+    products = db.relationship('Product', secondary=product_item_association, backref='items')
+
+class Tools(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    description=db.Column(db.String(255), nullable=False)
+    quantity = db.Column(db.Integer)
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

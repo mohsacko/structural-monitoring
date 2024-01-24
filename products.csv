@@ -1,0 +1,30 @@
+id,designation,supplier,description,parameters,system,photo
+1,STS4-WBS-AC900,BDI,Base Station,,BDI STS 4 SYSTEM,
+2,OAP-ENS620EXT,BDI,Dual band Acess Point for BDI STS System,,BDI STS 4 SYSTEM,
+3,ST350,BDI,Strain Gage Sensors,,BDI STS 4 SYSTEM,LT_Photo_2
+4,ST350,BDI,Strain Gage Sensors - 20ft,,BDI STS 4 SYSTEM,
+5,ST350,BDI,Strain Gage Sensors - 15ft,,BDI STS 4 SYSTEM,
+6,BA2512-002,BDI,Bi Axial Accelerometers,,BDI STS 4 SYSTEM,
+7,,BDI,16 Channels Nodes,,BDI STS 4 SYSTEM,
+8,,BDI,4 Channels Nodes,,BDI STS 4 SYSTEM,
+9,,Benchmark,Tripod for String Pots,,BDI STS 4 SYSTEM,
+10,T611,BDI,MEMS Tiltmeter,15 degrees,BDI STS 4 SYSTEM ,LT_Photo_3
+11,CR3000,Campbell  Scientific/BDI,Micro Logger,,Campbell Scientific,LT_Photo_1
+12,,BDI,Precision Tiltmeter,3 degrees ,BDI STS 4 Systen,LT_Photo_4
+13,,BDI,Remote Logger,,Campbell Scientific ,LT_Photo_5
+14,GT2-H50,Keyence,Contact sensor for remote loggers,,,LT_Photo_6
+15,,Olson Instruments ,Concrete thickness Gauge,,,LT_Photo _7
+16,,Proceq,Profoscope,,,LT_Photo_8
+17,,SENSRnet,Accelerometer and Inclinometer,,SENSRnet,LT_Photo_9
+18,,SENSRnet,Expansion Module,,SENSRnet,LT_Photo_10
+19,,WSP,Deflection Measurement with Twangers,,BDI STS 4 SYSTEM,LT_Photo_11
+20,LDC3000A,BDI,Displacement Transducer,2.95,BDI STS 4 SYSTEM,LT_Photo_12
+21,SwitcherGator,Gator,Load Testing Fiber System,,Gator Fiber System,LT_Photo_13
+22,R002-894-V1,SENSEnet,SNA1 Tabletop Power Supply Kit,,SENSRnet,LT_Photo_14
+23,,BDI,1/4 or 1/2 arm foil strain gage (5 wire),,BDI,LT_Photo_15
+24,,,Ground Wire (8) x 50ft and Rubber Tubing (7) x 100ft,,,LT_Photo_16
+25,ST350EXT,BDI,Strain gage sensor extension ,,BDI STS 4 SYSTEM,LT_Photo_17
+26,HX-PA-15-70382,BDI,String pot for deflection measurement ,,BDI STS 4 SYSTEM,LT_Photo_19
+27,,BDI,1/4 or 1/2 arm foil strain gage (transducer connector),,BDI STS 4 SYSTEM,LT_Photo_18
+28,,BDI,Uniaxial Accelerometer ,,BDI STS 4 SYSTEM,LT_Photo_20
+29,6161A-2,GEOKON,MEMS Tiltmeter (Bi-axial),15 degrees,Campbell  Scientific/BDI,LT_Photo_21
