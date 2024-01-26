@@ -1,43 +1,43 @@
 id,reference,condition,unit,measurement,products
-1,B3197,Fair,Feet,25,3
-2,B4488,Fair,Feet,15,3
-3,B4496,Fair,Feet,15,3
-4,B3310,Fair,Feet,20,3
-5,B4487,Fair,Feet,15,3
-6,B4489,Fair,Feet,15,3
-7,B3189,Fair,Feet,20,3
-8,B3190,Fair,Feet,20,3
-9,B4499,Fair,Feet,15,3
-10,B3188,Fair,Feet,20,3
-11,B3456,Fair,Feet,15,3
-12,B3184,Fair,Feet,15,3
-13,B4498,Fair,Feet,15,3
-14,B4490,Fair,Feet,15,3
-15,B3461,Fair,Feet,15,3
-16,B3460,Fair,Feet,15,3
-17,B3459,Fair ,Feet,15,3
-18,B3313,Fair ,Feet,15,3
-19,B4494,Fair ,Feet ,15,3
-20,B3187,Fair ,Feet,15,3
-21,B4495,Fair ,Feet,15,3
-22,B4500,Fair ,Feet,15,3
-23,B3458,Fair ,Feet,15,3
-24,B4486,Fair ,Feet,15,3
-25,B4493,Fair ,Feet,15,3
-26,B4501,Fair ,Feet,15,3
-27,B4491,Bad,Feet,15,3
+1,B3197,Fair,Feet,25,5
+2,B4488,Fair,Feet,15,5
+3,B4496,Fair,Feet,15,5
+4,B3310,Fair,Feet,20,4
+5,B4487,Fair,Feet,15,5
+6,B4489,Fair,Feet,15,5
+7,B3189,Fair,Feet,20,4
+8,B3190,Fair,Feet,20,4
+9,B4499,Fair,Feet,15,5
+10,B3188,Fair,Feet,20,4
+11,B3456,Fair,Feet,15,5
+12,B3184,Fair,Feet,15,5
+13,B4498,Fair,Feet,15,5
+14,B4490,Fair,Feet,15,5
+15,B3461,Fair,Feet,15,5
+16,B3460,Fair,Feet,15,5
+17,B3459,Fair ,Feet,15,5
+18,B3313,Fair ,Feet,15,5
+19,B4494,Fair ,Feet ,15,5
+20,B3187,Fair ,Feet,15,5
+21,B4495,Fair ,Feet,15,5
+22,B4500,Fair ,Feet,15,5
+23,B3458,Fair ,Feet,15,5
+24,B4486,Fair ,Feet,15,5
+25,B4493,Fair ,Feet,15,5
+26,B4501,Fair ,Feet,15,5
+27,B4491,Bad,Feet,15,5
 28,B3196,Bad,Feet,25,3
-29,B3312,Bad,Feet,15,3
-30,B4497,Bad,Feet,15,3
-31,B3311,Bad,Feet,20,3
-32,B8403,Good,Feet,20,3
-33,B8404,Good,Feet,20,3
-34,B8405,Good,Feet,20,3
-35,B8401,Good ,Feet,20,3
-36,B8400,Good ,Feet ,20,3
-37,B8402,Good ,Feet ,20,3
-38,B8406,Good ,Feet ,20,3
-39,B8407,Good ,Feet ,20,3
+29,B3312,Bad,Feet,15,5
+30,B4497,Bad,Feet,15,5
+31,B3311,Bad,Feet,20,4
+32,B8403,Good,Feet,20,4
+33,B8404,Good,Feet,20,4
+34,B8405,Good,Feet,20,4
+35,B8401,Good ,Feet,20,4
+36,B8400,Good ,Feet ,20,4
+37,B8402,Good ,Feet ,20,4
+38,B8406,Good ,Feet ,20,4
+39,B8407,Good ,Feet ,20,4
 40,UTA1191,Good ,Feet,25,10
 41,UTA1190,Good ,Feet ,25,10
 42,T2082,Fair ,Feet,15,12
@@ -224,3 +224,6 @@ id,reference,condition,unit,measurement,products
 223,2234109,Good,Each,999,29
 224,2234110,Good,Each,999,29
 225,2234111,Good,Each,999,29
+226,ABa1209,Good,Each,999,6
+227,ABa1210,Good,Each,999,6
+228,ABa1211,Good,Each,999,6

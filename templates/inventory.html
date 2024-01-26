@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Load Testing Inventory{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-3 modular-container">
+        <div class="card">
+            <div class="card-header">Products</div>
+            <div class="card-body">
+                <select id="product-dropdown" onchange="loadItems()">
+                    <option value="">Select a Product</option>
+                    {% for product in products %}
+                    <option value="{{ product.id }}">{{ product.description }}</option>
+                    {% endfor %} 
+                </select>
+                <br />
+                <br />
+                <div class="card">
+                    <div class="card-header">Reference Photo</div>
+                    <div class="card-body">
+                        <div id="product_photo"></div>
+                    </div>
+                </div>
+                <br />
+                <div class="card">
+                    <div class="card-header">Supplier Info</div>
+                    <div class="card-body">
+                        <div id="product_supplier"></div>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 modular-container">
+        <div class="card">
+            <div class="card-header">Item SKU</div>
+            <div class="card-body">
+                <div id="items-container"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 modular-container">
+        <div class="card">
+            <div class="card-header">Item condition</div>
+            <div class="card-body">
+                <div id="items-condition"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 modular-container">
+        <div class="card">
+            <div class="card-header">Last Calibration</div>
+            <div class="card-body">
+                <div id="items-calibration">01/01/2000</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-11">
+        <div class="card">
+            <div class="card-header">Equipment Tracker</div>
+            <div class="card-body">
+                THIS IS WHERE EACH EQUIPMENT AT EACH BRIDGE WILL SHOW    
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function loadItems() {
+        var productId = document.getElementById('product-dropdown').value;
+        if (productId) {
+            $.ajax({
+                url: '/get_items/' + productId,
+                type: 'GET',
+                success: function(response) {
+                    console.log(response);
+                    var html_sku = '';
+                    var html_cond = '';
+                    var html_photo = '';
+                    response.items.forEach(function(item) {
+                        html_sku += '<p>' + item.reference + '</p>';
+                        html_cond += '<p>' + item.condition + '</p>';
+                    });
+                    if (response.photo) {
+                        html_photo = '<img src="' + response.photo + '" alt="Product Image" class="product-image">';
+                    }
+                    document.getElementById('items-container').innerHTML = html_sku;
+                    document.getElementById('items-condition').innerHTML = html_cond;
+                    document.getElementById('product_supplier').innerHTML = 'Supplier: ' + response.supplier;
+                    document.getElementById('product_photo').innerHTML = html_photo;
+                }
+            });
+        } else {
+            document.getElementById('items-container').innerHTML = '';
+            document.getElementById('items-condition').innerHTML = '';
+            document.getElementById('product_supplier').innerHTML = '';
+            document.getElementById('product_photo').innerHTML = '';
+        }
+    }    
+</script>
+
+{% endblock %}

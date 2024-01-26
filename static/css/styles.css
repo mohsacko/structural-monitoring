@@ -17,4 +17,8 @@
     display: block; /* Remove any extra space below the image */
 }
 
+.product-image {
+    width: 100%;
+    height: auto;
+}
 

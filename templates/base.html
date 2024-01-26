@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Structural Monitoring{% endblock title %}</title>
+    <title>{% block title %}Structural Health Monitoring{% endblock title %}</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!-- HTMX -->
@@ -50,6 +50,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('live') }}">Live</a>
+                        </li>
+                    {% endif %}
+                    {% if current_user.email == "mohsacko@gmail.com" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('inventory') }}">Inventory</a>
                         </li>
                     {% endif %}
                 </ul>

@@ -7,7 +7,7 @@ import json
 from datetime import datetime, timedelta
 
 from . import app
-from .models import db, User, Bridge, SensorData
+from .models import db, User, Bridge, SensorData, Product, Item
 from .utils import DateTimeEncoder
 
 login_manager = LoginManager()
@@ -93,6 +93,29 @@ def logout():
     logout_user()
     return redirect(url_for('dashboard'))
 
-@app.route("/live", methods=['GET', 'POST'])
+@app.route('/live', methods=['GET', 'POST'])
 def live():
     return render_template('live.html')
+
+#Page for Load testing inventory
+@app.route('/inventory', methods=['GET', 'POST'])
+@login_required
+def inventory():
+    user = User.query.get(current_user.id)
+    if user.email == "mohsacko@gmail.com":
+        products = Product.query.all()
+        return render_template('inventory.html', products=products)
+    else:
+        return render_template('error.html')
+
+@app.route('/get_items/<int:product_id>')
+def get_items(product_id):
+    product = Product.query.get(product_id)
+    if product:
+        items = Item.query.filter(Item.products.any(id=product_id)).all()
+        item_data = [{'id': item.id, 'reference': item.reference, 'condition': item.condition} for item in items]
+        # Assuming the photo filename is stored in the `photo` attribute of the product
+        photo_url = url_for('static', filename=f'img/{product.photo}.jpg') if product.photo else ''
+        return jsonify({'items': item_data, 'supplier': product.supplier, 'photo': photo_url})
+    else:
+        return jsonify({'items': [], 'supplier': '', 'photo': ''})
