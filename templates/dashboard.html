@@ -17,17 +17,29 @@
     </div>
     <div class="col-md-5 modular-container">
         <div class="card">
-            <div class="card-header">Sensor Location</div>
+            <div class="card-header">Sensor Location and Data</div>
             <div class="card-body">
-                <label for="bridge-select">Select a Bridge:</label>
-                <select class="form-control" name='bridge' hx-get="/bridges" hx-trigger="load,change" hx-target="#bridge-data">
-                    {% for bridge in bridges %}
-                        <option value="{{ bridge.id }}">{{ bridge.number }}</option>
-                    {% endfor %}
-                </select>
+                <!-- Placeholder for Bridge Photo with sensor locastion and data -->
+                <img src="{{ url_for('static', filename='/img/banner-2.webp') }}" alt="Banner" class="banner-image">
             </div>
         </div>
     </div>
+    <div class="col-md-3 modular-container">
+        <div class="card">
+            <div class="card-header">Bridge Information</div>
+            <div class="card-body">
+                Asset ID:....
+                <br />
+                Location...
+                <br />
+                Time
+                <br />
+                ....
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div x-data="{}" @htmx:afterSwap="TiltDashboard.updateDashboard">
