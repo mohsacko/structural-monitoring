@@ -1,0 +1,18 @@
+id,number,name,facility,crossing,location,longitude,latitude,photo_url
+8,925,Harbor River,US 21,Harbor River,Beaufort,None,None,None
+9,3186,Ladys Island,US 21 Bus.,Beaufort River (ICWW),Beaufort,None,None,None
+10,2303,Wappoo Cut,SC 171,ICWW,Charleston,None,None,None
+11,3607,New Ashley,US 17 NB,Ashley River,Charleston,None,None,None
+12,228,Old Ashley,US 17 SB,Ashley River,Charleston,None,None,None
+13,1303,Ben Sawyer,SC 703,ICWW,Charleston,None,None,None
+14,687,Socastee,S-26-616,ICWW,Horry,None,None,None
+15,686,Little River,S-26-20,ICWW,Horry,None,None,None
+16,2298,Chechessee River,SC 170,Chechessee River,Beaufort,None,None,None
+17,2662,Broad River,SC 170,Broad River,Beaufort,None,None,None
+18,8516,Don Holt,I-526,Cooper River,Berkeley/Charleston,None,None,None
+19,9824,Ravenel,US 17,Cooper River,Charleston,None,None,None
+20,8235,Wando River,I-526 EBL (Wando),Wando River,Charleston,None,None,None
+21,8720,IOP Connector,SC 517,ICWW,Charleston,None,None,None
+22,8617,James Island Expressway (JIX),SC 30 (James Island,ICWW @ Ashley River,Charleston,None,None,None
+23,1793,Stono River (Maybank),SC 700,Stono River,Charleston,None,None,None
+24,9889,Cross Island Parkway,US 278,Broad Creek,Beaufort,None,None,None

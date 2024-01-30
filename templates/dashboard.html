@@ -9,7 +9,7 @@
                 <label for="bridge-select">Select a Bridge:</label>
                 <select class="form-control" name='bridge' hx-get="/bridges" hx-trigger="load,change" hx-target="#bridge-data">
                     {% for bridge in bridges %}
-                        <option value="{{ bridge.id }}">{{ bridge.number }}</option>
+                        <option value="{{ bridge.id }}">{{ bridge.name }}</option>
                     {% endfor %}
                 </select>
             </div>

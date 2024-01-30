@@ -66,8 +66,8 @@ class Bridge(db.Model):
     facility = db.Column(db.String(100))
     crossing = db.Column(db.String(100))
     location = db.Column(db.String(200))
-    longitude = db.Column(db.Numeric(precision=9, scale=6))
-    latitude = db.Column(db.Numeric(precision=9, scale=6))
+    longitude = db.Column(db.Numeric(precision=9, scale=6), nullable=True)
+    latitude = db.Column(db.Numeric(precision=9, scale=6), nullable=True)
     photo_url = db.Column(db.String(500))
     sensors = db.relationship('Sensor', backref='bridge', lazy=True)
 
