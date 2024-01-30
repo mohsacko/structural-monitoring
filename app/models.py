@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-
+from decimal import Decimal
 from datetime import datetime
 
 db = SQLAlchemy()
@@ -66,6 +66,8 @@ class Bridge(db.Model):
     facility = db.Column(db.String(100))
     crossing = db.Column(db.String(100))
     location = db.Column(db.String(200))
+    longitude = db.Column(db.Numeric(precision=9, scale=6))
+    latitude = db.Column(db.Numeric(precision=9, scale=6))
     photo_url = db.Column(db.String(500))
     sensors = db.relationship('Sensor', backref='bridge', lazy=True)
 
