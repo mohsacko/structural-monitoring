@@ -1,17 +1,35 @@
 <!-- bridge_data.html -->
 
-<div class="text-center my-3">
-    <h2>{{ bridge.number }}</h2>
-
-    <!-- Dropdown for selecting the view -->
-    <select hx-get="/bridges" hx-trigger="change" hx-target="#bridge-content" hx-include="[name='bridge']" name="view">
-        <option value="hourly">Today</option>
-        <option value="weekly">Last Week</option>
-        <option value="monthly">This Month</option>
-        <option value="annual">Year to Date</option>
-    </select>
-    <div id="bridge-content">
-        {% include 'partials/bridge_data_content.html' %}
+<div class="col-md-12 card text-center modular-container">
+    <div class="card-body">
+      <h2 class="card-title">{{ bridge.number }}</h2>
     </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-3 modular-container">
+        <div class="card">
+            <div class="card-header"><h4>Historical Data</h4></div>
+            <div class="card-body">
+                <!-- Dropdown for selecting the view -->
+                <select hx-get="/bridges" hx-trigger="change" hx-target="#bridge-content" hx-include="[name='bridge']" name="view">
+                    <option value="hourly">Today</option>
+                    <option value="weekly">Last Week</option>
+                    <option value="monthly">This Month</option>
+                    <option value="annual">Year to Date</option>
+                </select>
+            </div>
+        </div>
+    </div>        
+    <div class="col-md-8 modular-container">
+        <div class="card">
+            <div class="card-header"><h4>Graphical View</h4></div>
+            <div class="card-body">
+                <div id="bridge-content">
+                    {% include 'partials/bridge_data_content.html' %}
+                </div>
+            </div>
+        </div>
+    </div>        
 </div>
 

@@ -62,6 +62,9 @@ class Group(db.Model):
 class Bridge(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     number = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    facility = db.Column(db.String(100), nullable=False)
+    crossing = db.Column(db.String(100), nullable=False)
     location = db.Column(db.String(200), nullable=True)
     photo_url = db.Column(db.String(500))
     sensors = db.relationship('Sensor', backref='bridge', lazy=True)

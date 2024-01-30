@@ -22,3 +22,11 @@
     height: auto;
 }
 
+.card-title {
+    margin: 0; /* Ensure no additional margin is reducing the available width */
+    width: 100%; /* This ensures the title will try to use up all available space */
+    white-space: nowrap; /* Prevents the text from wrapping and forces it to one line */
+    overflow: hidden; /* Ensures any overflow text is hidden */
+    text-overflow: ellipsis; /* Adds an ellipsis if the text overflows the container's width */
+}
+
