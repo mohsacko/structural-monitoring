@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_migrate import Migrate
 import os
 
@@ -112,3 +112,29 @@ def chart_data() -> Response:
 If so, it starts the Flask application. host="0.0.0.0" allows the server to be accessible externally. threaded=True enables handling multiple requests at the same time."""
 #if __name__ == "__main__":
     #app.run(host="0.0.0.0", threaded=True)
+
+"""
+@app.route('/get_bridge_info/', methods=['GET'])
+def get_bridge_info():
+    # Get the bridge ID from the request parameters
+    bridge_id = request.args.get('bridge')
+
+    # Query the database to retrieve bridge information for the requested bridge_id
+    bridge = Bridge.query.filter_by(id=bridge_id).first()
+
+    # Check if the bridge with the specified ID exists in the database
+    if bridge:
+        # Convert the bridge object to a dictionary
+        bridge_info = {
+            'name': bridge.name,
+            'number': bridge.number,
+            'location': bridge.location
+        }
+        return jsonify(bridge_info)
+    else:
+        # Return an error response if the bridge_id is not found in the database
+        return jsonify({'error': 'Bridge not found'}), 404
+
+if __name__ == '__main__':
+    app.run(debug=True)
+"""

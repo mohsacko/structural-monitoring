@@ -7,11 +7,15 @@
             <div class="card-header"><h4>Bridge Selector</h4></div>
             <div class="card-body">
                 <label for="bridge-select">Select a Bridge:</label>
-                <select class="form-control" name='bridge' hx-get="/bridges" hx-trigger="load,change" hx-target="#bridge-data">
+                <select class="form-control" name='bridge' hx-get="/bridges" hx-trigger="load,change" hx-target="#bridge-data" onchange="loadBridgeInfo()">
                     {% for bridge in bridges %}
                         <option value="{{ bridge.id }}">{{ bridge.name }}</option>
                     {% endfor %}
                 </select>
+                <div id="bridge-info-container">
+                    Test
+                    <!-- Bridge information will be displayed here -->
+                </div>
             </div>
         </div>
     </div>
@@ -48,4 +52,34 @@
     </div>
 
 </div>
+
+<!-- Scrtipt to populate bridge information when selected from dropdown
+<script>
+    function loadBridgeInfo() {
+        var bridgeId = document.getElementById('bridge').value;
+        if (bridgeId) {
+            $.ajax({
+                url: '/get_bridge_info/' + bridgeId,  // Adjust the URL to your API endpoint
+                type: 'GET',
+                success: function(response) {
+                    console.log(response);
+                    // Extract bridge information from the response
+                    var bridgeName = response.name;
+                    var bridgeNumber = response.number;
+                    var bridgeLocation = response.location;
+                    
+                    // Display bridge information in the container
+                    var bridgeInfoHTML = '<p>Name: ' + bridgeName + '</p>';
+                    bridgeInfoHTML += '<p>Number: ' + bridgeNumber + '</p>';
+                    bridgeInfoHTML += '<p>Location: ' + bridgeLocation + '</p>';
+                    
+                    document.getElementById('bridge-data').innerHTML = bridgeInfoHTML;
+                }
+            });
+        } else {
+            document.getElementById('bridge-data').innerHTML = 'Error';
+        }
+    }
+</script>
+-->
 {% endblock content %}
